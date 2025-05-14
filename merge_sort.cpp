@@ -3,7 +3,7 @@ using namespace std;
 const int N = 1e5;
 int a[N];
 void merge_sort(int l, int r){
-if(l >= r){
+if(l == r){
     return;
 }
    int mid = (l + r) / 2;
@@ -20,9 +20,17 @@ if(l >= r){
 
    int Lid = 0, Rid = 0, i = l;
    while(Lid < L.size() or Rid < R.size()){
-     if(Rid == R.size() or L[Lid] < R[Rid]){
+     if(Lid == L.size()){
+          a[i] = R[Rid];
+         Rid++;
+     }
+    else if(Rid == R.size()){
          a[i] = L[Lid];
-         Lid++;
+         Lid++; 
+     }
+     else if(L[Lid] < R[Rid]){
+        a[i] = L[Lid];
+         Lid++; 
      }
      else{
          a[i] = R[Rid];
@@ -43,3 +51,5 @@ int main(){
         cout << a[i] << " ";
     }
 }
+
+// L.size() always unsigend integer return kore
