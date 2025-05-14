@@ -28,6 +28,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int search(int l, int r, int k){
+    if(l > r) return -1;
     int mid = (l + r) / 2;
     int not_divisible = (mid - mid / k);
     if(not_divisible > k){
