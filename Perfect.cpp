@@ -1,26 +1,33 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-bool is_sum_10(long long ans){
+bool is_sum_10(long long ans)
+{
     int num = 0;
-    while(ans){
+    while (ans)
+    {
         num = num + (ans % 10);
         ans = ans / 10;
     }
-    if(num == 10){
+    if (num == 10)
+    {
         return true;
     }
     return false;
 }
 
-int main(){
-    int k; cin >> k;
+int main()
+{
+    int k;
+    cin >> k;
     long long ans = 0;
     int count = 1;
-    while(k){
+    while (k)
+    {
         ans = 1LL * (19 + (count - 1) * 9);
         bool ok = is_sum_10(ans);
-        if(ok){
+        if (ok)
+        {
             k--;
         }
         count++;
