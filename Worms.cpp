@@ -26,7 +26,7 @@ int main(){
             r = mid - 1;
         }
     }
-    cout << ans << "\n";
+    cout << ans << "\n"
 
    }
 }
